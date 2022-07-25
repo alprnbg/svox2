@@ -89,7 +89,7 @@ def main():
     grid = svox2.SparseGrid.load(args.ckpt, device=device)
     config_util.setup_render_opts(grid.opt, args)
 
-    render_driving(grid, dset, args.first_pose, args.second_pose, render_out_path, device)
+    render_driving(grid, dset, args.first_pose, args.last_pose, render_out_path, device)
 
 if __name__ == "__main__":
     main()
