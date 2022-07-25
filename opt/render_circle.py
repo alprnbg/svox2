@@ -62,7 +62,7 @@ def render_circle_func(grid, dset, render_out_path, traj_type, device):
     with torch.no_grad():
         n_images = c2ws.size(0)
         frames = []
-        grid.opt.near_clip = 0.35 # 0.0
+        grid.opt.near_clip = 0.0
         dset_w = dset.get_image_size(0)[1]
         dset_h = dset.get_image_size(0)[0]
         for img_id in tqdm(range(0, n_images)):

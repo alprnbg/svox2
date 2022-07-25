@@ -23,6 +23,7 @@ from util.util import Timing, get_expon_lr_func, generate_dirs_equirect, viridis
 from util import config_util
 from render_circle import render_circle_func
 from render import render_func
+from render_driving import render_driving
 
 from warnings import warn
 from datetime import datetime
@@ -470,9 +471,9 @@ while True:
             print('eval stats:', stats_test)
 
         if epoch_id != 0 and (epoch_id % 3 == 0 or gstep_id_base >= args.n_iters):
-            os.makedirs(os.path.join(args.train_dir, "circle_animations"), exist_ok=True)
-            render_path = os.path.join(args.train_dir, "circle_animations", f"{epoch_id}.mp4") 
-            render_circle_func(grid, dset_test, render_path, "circle", device)
+            #os.makedirs(os.path.join(args.train_dir, "circle_animations"), exist_ok=True)
+            #render_path = os.path.join(args.train_dir, "circle_animations", f"{epoch_id}.mp4") 
+            #render_circle_func(grid, dset_test, render_path, "circle", device)
             os.makedirs(os.path.join(args.train_dir, "test_render"), exist_ok=True)
             render_path = os.path.join(args.train_dir, "test_render") 
             render_func(grid, dset_test, render_path, device, False)
