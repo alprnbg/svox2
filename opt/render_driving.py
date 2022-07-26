@@ -39,6 +39,11 @@ def render_driving(grid, dset, first_pose_name, last_pose_name, render_out_path,
 
     #for i in range(dset.n_images):
     #    c2ws.append(dset.c2w[i].detach().cpu().numpy())
+    print("xxxxxxxxxxxxx\nfirst")
+    print(first_pose)
+    print("last")
+    print(last_pose)
+    print("xxxxxxxxxxxxx")
         
     c2ws = interpolate_extrinsics(first_pose, last_pose)   
     c2ws = torch.from_numpy(c2ws).to(device=device)
